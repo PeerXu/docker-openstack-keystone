@@ -1,3 +1,5 @@
+#! /usr/bin/env sh
+
 mkdir -p /var/lib/keystone
 
 keystone-manage db_sync
@@ -13,4 +15,5 @@ keystone-manage bootstrap --bootstrap-username admin \
 		--bootstrap-service-name keystone \
 		--bootstrap-admin-url "http://localhost:35357/v3" \
 		--bootstrap-public-url "http://localhost:5000/v3" \
-		--bootstrap-internal-url "http://localhost:5000/v3"
+		--bootstrap-internal-url "http://localhost:5000/v3" \
+		--bootstrap-region-id region1
