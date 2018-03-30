@@ -30,7 +30,7 @@ RUN chown root:root /root/bootstrap.sh \
 COPY startup.sh /root/startup.sh
 RUN chown root:root /root/startup.sh \
     && chmod a+x /root/startup.sh
-ENTRYPOINT ["/bin/sh /root/startup.sh"]
+ENTRYPOINT ["/bin/sh", "/root/startup.sh"]
 EXPOSE 5000 35357
 
 HEALTHCHECK --interval=10s --timeout=5s \
