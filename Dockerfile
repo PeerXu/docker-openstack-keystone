@@ -25,14 +25,14 @@ COPY openrc /root/openrc
 COPY bootstrap.sh /root/bootstrap.sh
 RUN chown root:root /root/bootstrap.sh \
     && chmod a+x /root/bootstrap.sh \
-    && /root/bootstrap.sh
+    && /bin/sh /root/bootstrap.sh
 
 COPY startup.sh /root/startup.sh
 RUN chown root:root /root/startup.sh \
     && chmod a+x /root/startup.sh
-ENTRYPOINT ["/root/startup.sh"]
+ENTRYPOINT ["/bin/sh /root/startup.sh"]
 EXPOSE 5000 35357
 
 HEALTHCHECK --interval=10s --timeout=5s \
   CMD curl -f http://localhost:5000/v3 2> /dev/null || exit 1; \
-  curl -f http://localhost:35357/v3 2> /dev/null || exit 1;
+  curl -f http://localhost:35357/v3 2> /dev/null || exit 1; \
