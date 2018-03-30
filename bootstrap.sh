@@ -1,4 +1,4 @@
-#! /usr/bin/env sh
+#! /bin/sh
 
 mkdir -p /var/lib/keystone
 
