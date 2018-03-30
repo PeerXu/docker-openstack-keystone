@@ -1,0 +1,9 @@
+version: "2"
+services:
+
+  keystone:
+    image: e3rp4y/openstack-keystone
+    ports:
+    - 35357:35357
+    - 5000:5000
+    restart: always
